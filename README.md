@@ -1,4 +1,4 @@
-Student Financial Wellness App
+****Student Financial Wellness App****
 
 This project is a student-focused financial wellness platform designed to help college students manage their finances more effectively while building financial literacy.
 It combines:
