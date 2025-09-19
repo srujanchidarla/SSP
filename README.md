@@ -123,7 +123,7 @@ Since this is a solo project, all roles will be handled by me:
     
     •	Current apps (Mint, YNAB, Rocket Money) assume financial literacy and stable income.
     
-    ****Differentiator:****
+    Differentiator:
     
     •	Education-first: AI explains financial terms.
     
