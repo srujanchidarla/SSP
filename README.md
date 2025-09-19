@@ -4,62 +4,39 @@ This project is a student-focused financial wellness platform designed to help c
 It combines:
 
     •	Expense Tracking: Manual entry and optional bank integration.
-    •	Student Loan Management & Education: A loan dashboard, a repayment calculator, and financial concepts explained by an AI.
-    
-    •	Discounts & Scholarships Feed: Aggregated student-specific offers.
-    
+    •	Student Loan Management & Education: A loan dashboard, a repayment calculator, and financial concepts explained by an AI.   
+    •	Discounts & Scholarships Feed: Aggregated student-specific offers.   
     •	AI Chatbot: An intelligent assistant that answers student financial questions, integrates user data, and provides personalized insights.
   
 ****Key Features:****
 
       •	Track income and expenses with categories and visual dashboards.
-      
-      •	Manage student loans with repayment simulations and forecasting.
-      
-      •	Get real-time student discounts and curated scholarship information.
-      
-      •	Ask questions via an AI-powered chatbot for:
-      
+      •	Manage student loans with repayment simulations and forecasting.  
+      •	Get real-time student discounts and curated scholarship information. 
+      •	Ask questions via an AI-powered chatbot for:      
       •	Spending summaries (“How much did I spend on books last month?”)
-      
       •	Loan advice (“What happens if I pay $100 more per month?”)
-      
-      •	Offers (“Any food discounts available this week?”)
-      
+      •	Offers (“Any food discounts available this week?”)      
       •	Cloud-deployed web app with a responsive front-end design.
   
 ****Tech Stack****
 
     Frontend
     
-      •	React.js (main framework for web app)
-      
-      •	Material-UI/Chakra UI (component library for styling)
-      
-      •	Chart.js / Recharts (visualization of expenses & loans)
-      
-      •	React Router (routing & navigation)
-      
-    Backend & Infrastructure
-    
-      •	Backend Framework: Node.js (Express.js) or Python (FastAPI)
-      
-      •	Database: PostgreSQL (primary), Redis (caching)
-      
-      •	AI Integration: OpenAI GPT-4o API
-      
-      •	Bank Integration (optional): Plaid API Sandbox
-      
-      •	Discounts Integration: Custom scrapers/APIs for student offers
-      
-      •	Cloud:
-      
+      •	React.js (main framework for web app)     
+      •	Material-UI/Chakra UI (component library for styling)     
+      •	Chart.js / Recharts (visualization of expenses & loans)   
+      •	React Router (routing & navigation)      
+    Backend & Infrastructure   
+      •	Backend Framework: Node.js (Express.js) or Python (FastAPI)     
+      •	Database: PostgreSQL (primary), Redis (caching)      
+      •	AI Integration: OpenAI GPT-4o API      
+      •	Bank Integration (optional): Plaid API Sandbox      
+      •	Discounts Integration: Custom scrapers/APIs for student offers      
+      •	Cloud:      
       •	AWS/GCP (backend + DB hosting)
-      
-      •	Vercel/Netlify (frontend hosting)
-      
-      •	Docker & Kubernetes for scalability
-      
+      •	Vercel/Netlify (frontend hosting)      
+      •	Docker & Kubernetes for scalability      
       •	Auth & Security: JWT, OAuth2, HTTPS
 
 **Project Status**:
