@@ -65,9 +65,9 @@ Tech Stack
 
 Project Status:
 
-1. Current Phase (Week 1): Setting up repo, writing README, finalizing architecture.
-
-2. Next Phase (Week 2): Start Expense Tracking module (manual entry).
+        1. Current Phase (Week 1): Setting up repo, writing README, finalizing architecture.
+        
+        2. Next Phase (Week 2): Start Expense Tracking module (manual entry).
 
 Workload Distribution:
 
