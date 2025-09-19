@@ -7,6 +7,7 @@ Description
 This project is a student-focused financial wellness platform designed to help college students manage their finances more effectively while building financial literacy.
 
 It combines:
+
 	•	Expense Tracking (manual entry and optional bank integration)
 	•	Student Loan Management & Education (loan dashboard, repayment calculator, financial concepts explained by AI)
 	•	Discounts & Scholarships Feed (aggregated student-specific offers)
