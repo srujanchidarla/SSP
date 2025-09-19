@@ -13,76 +13,77 @@ It combines:
   
 Key Features:
 
-  •	Track income and expenses with categories and visual dashboards.
-  
-  •	Manage student loans with repayment simulations and forecasting.
-  
-  •	Get real-time student discounts and curated scholarship information.
-  
-  •	Ask questions via an AI-powered chatbot for:
-  
-  •	Spending summaries (“How much did I spend on books last month?”)
-  
-  •	Loan advice (“What happens if I pay $100 more per month?”)
-  
-  •	Offers (“Any food discounts available this week?”)
-  
-  •	Cloud-deployed web app with a responsive front-end design.
+      •	Track income and expenses with categories and visual dashboards.
+      
+      •	Manage student loans with repayment simulations and forecasting.
+      
+      •	Get real-time student discounts and curated scholarship information.
+      
+      •	Ask questions via an AI-powered chatbot for:
+      
+      •	Spending summaries (“How much did I spend on books last month?”)
+      
+      •	Loan advice (“What happens if I pay $100 more per month?”)
+      
+      •	Offers (“Any food discounts available this week?”)
+      
+      •	Cloud-deployed web app with a responsive front-end design.
   
 Tech Stack
 
-Frontend
-
-  •	React.js (main framework for web app)
-  
-  •	Material-UI/Chakra UI (component library for styling)
-  
-  •	Chart.js / Recharts (visualization of expenses & loans)
-  
-  •	React Router (routing & navigation)
-  
-Backend & Infrastructure
-  •	Backend Framework: Node.js (Express.js) or Python (FastAPI)
-  
-  •	Database: PostgreSQL (primary), Redis (caching)
-  
-  •	AI Integration: OpenAI GPT-4o API
-  
-  •	Bank Integration (optional): Plaid API Sandbox
-  
-  •	Discounts Integration: Custom scrapers/APIs for student offers
-  
-  •	Cloud:
-  
-  •	AWS/GCP (backend + DB hosting)
-  
-  •	Vercel/Netlify (frontend hosting)
-  
-  •	Docker & Kubernetes for scalability
-  
-  •	Auth & Security: JWT, OAuth2, HTTPS
+    Frontend
+    
+      •	React.js (main framework for web app)
+      
+      •	Material-UI/Chakra UI (component library for styling)
+      
+      •	Chart.js / Recharts (visualization of expenses & loans)
+      
+      •	React Router (routing & navigation)
+      
+    Backend & Infrastructure
+    
+      •	Backend Framework: Node.js (Express.js) or Python (FastAPI)
+      
+      •	Database: PostgreSQL (primary), Redis (caching)
+      
+      •	AI Integration: OpenAI GPT-4o API
+      
+      •	Bank Integration (optional): Plaid API Sandbox
+      
+      •	Discounts Integration: Custom scrapers/APIs for student offers
+      
+      •	Cloud:
+      
+      •	AWS/GCP (backend + DB hosting)
+      
+      •	Vercel/Netlify (frontend hosting)
+      
+      •	Docker & Kubernetes for scalability
+      
+      •	Auth & Security: JWT, OAuth2, HTTPS
 
 Project Status:
 
-Current Phase (Week 1): Setting up repo, writing README, finalizing architecture.
+1. Current Phase (Week 1): Setting up repo, writing README, finalizing architecture.
 
-Next Phase (Week 2): Start Expense Tracking module (manual entry).
+2. Next Phase (Week 2): Start Expense Tracking module (manual entry).
 
 Workload Distribution:
 
 Since this is a solo project, all roles will be handled by me:
 
-  •	Frontend Development: UI/UX with React.js
-  
-  •	Backend Development: APIs with Express/FastAPI
-  
-  •	Database Design: PostgreSQL schema for users, expenses, loans, offers
-  
-  •	AI Integration: OpenAI GPT-4o chatbot, connecting data to LLM
-  
-  •	Cloud & DevOps: AWS/GCP deployment, Dockerization
-  
-  •	Project Management: Weekly progress tracked in Notion + GitHub commits
+      •	Frontend Development: UI/UX with React.js
+      
+      •	Backend Development: APIs with Express/FastAPI
+      
+      •	Database Design: PostgreSQL schema for users, expenses, loans, offers
+      
+      •	AI Integration: OpenAI GPT-4o chatbot, connecting data to LLM
+      
+      •	Cloud & DevOps: AWS/GCP deployment, Dockerization
+      
+      •	Project Management: Weekly progress tracked in Notion + GitHub commits
   
 Future Roadmap: Sprints/Phases
 
