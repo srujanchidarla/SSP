@@ -3,13 +3,13 @@ Student Financial Wellness App
 This project is a student-focused financial wellness platform designed to help college students manage their finances more effectively while building financial literacy.
 It combines:
 
-  •	Expense Tracking: Manual entry and optional bank integration.
-  
-  •	Student Loan Management & Education: A loan dashboard, a repayment calculator, and financial concepts explained by an AI.
-  
-  •	Discounts & Scholarships Feed: Aggregated student-specific offers.
-  
-  •	AI Chatbot: An intelligent assistant that answers student financial questions, integrates user data, and provides personalized insights.
+    •	Expense Tracking: Manual entry and optional bank integration.
+    
+    •	Student Loan Management & Education: A loan dashboard, a repayment calculator, and financial concepts explained by an AI.
+    
+    •	Discounts & Scholarships Feed: Aggregated student-specific offers.
+    
+    •	AI Chatbot: An intelligent assistant that answers student financial questions, integrates user data, and provides personalized insights.
   
 Key Features:
 
