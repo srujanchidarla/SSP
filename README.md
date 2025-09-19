@@ -63,7 +63,7 @@ Tech Stack
       
       •	Auth & Security: JWT, OAuth2, HTTPS
 
-Project Status:
+**Project Status**:
 
         1. Current Phase (Week 1): Setting up repo, writing README, finalizing architecture.
         
@@ -87,35 +87,34 @@ Since this is a solo project, all roles will be handled by me:
   
 Future Roadmap: Sprints/Phases
 
-  •	Week 1: Setup (repo, DB schema, README, environment)
+      •	Week 1: Setup (repo, DB schema, README, environment)
+      
+      •	Week 2–3: Expense Tracking (manual input + dashboard)
+      
+      •	Week 4: Loan Management (loan input + calculator)
+      
+      •	Week 5: Discounts & Scholarships feed
+      
+      •	Week 6: Chatbot (UI + basic GPT integration)
+      
+      •	Week 7: Chatbot with DB data integration (expenses, loans, offers)
+      
+      •	Week 8: Deployment (AWS/Vercel) + final polish + demo prep
   
-  •	Week 2–3: Expense Tracking (manual input + dashboard)
-  
-  •	Week 4: Loan Management (loan input + calculator)
-  
-  •	Week 5: Discounts & Scholarships feed
-  
-  •	Week 6: Chatbot (UI + basic GPT integration)
-  
-  •	Week 7: Chatbot with DB data integration (expenses, loans, offers)
-  
-  •	Week 8: Deployment (AWS/Vercel) + final polish + demo prep
-  
-**How to Run the Project
-**
-**Cost Breakdown
-•	OpenAI GPT-4o API: $0.01 per advanced request ($5–10/month for demo use).
-•	Plaid Sandbox: Free for testing.
-•	AWS/GCP Cloud (Student Credits): $0 (using free tier or credits).
-•	Frontend Hosting (Vercel/Netlify): Free tier.
-•	Domain (Optional): $10–15/year.
-•	Total Estimated Cost for MVP: ~$15–25/month (mostly AI usage).
+How to Run the Project
+Cost Breakdown
+    •	OpenAI GPT-4o API: $0.01 per advanced request ($5–10/month for demo use).
+    •	Plaid Sandbox: Free for testing.
+    •	AWS/GCP Cloud (Student Credits): $0 (using free tier or credits).
+    •	Frontend Hosting (Vercel/Netlify): Free tier.
+    •	Domain (Optional): $10–15/year.
+    •	Total Estimated Cost for MVP: ~$15–25/month (mostly AI usage).
 Business Use Case
-•	Students struggle with irregular income, complex loan terms, and overspending.
-•	Current apps (Mint, YNAB, Rocket Money) assume financial literacy and stable income.
-Differentiator:
-•	Education-first: AI explains financial terms.
-•	Student-specific: Loans, scholarships, student discounts.
-•	Proactive: The chatbot provides reminders, insights, and advice instead of passive dashboards.
+    •	Students struggle with irregular income, complex loan terms, and overspending.
+    •	Current apps (Mint, YNAB, Rocket Money) assume financial literacy and stable income.
+    Differentiator:
+    •	Education-first: AI explains financial terms.
+    •	Student-specific: Loans, scholarships, student discounts.
+    •	Proactive: The chatbot provides reminders, insights, and advice instead of passive dashboards.
 Authors & Acknowledgements
 
