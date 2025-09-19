@@ -11,7 +11,7 @@ It combines:
     
     •	AI Chatbot: An intelligent assistant that answers student financial questions, integrates user data, and provides personalized insights.
   
-Key Features:
+****Key Features:****
 
       •	Track income and expenses with categories and visual dashboards.
       
@@ -29,9 +29,9 @@ Key Features:
       
       •	Cloud-deployed web app with a responsive front-end design.
   
-Tech Stack
+****Tech Stack****
 
-    Frontend
+    ****Frontend****
     
       •	React.js (main framework for web app)
       
@@ -41,7 +41,7 @@ Tech Stack
       
       •	React Router (routing & navigation)
       
-    Backend & Infrastructure
+    ****Backend & Infrastructure****
     
       •	Backend Framework: Node.js (Express.js) or Python (FastAPI)
       
@@ -69,7 +69,7 @@ Tech Stack
         
         2. Next Phase (Week 2): Start Expense Tracking module (manual entry).
 
-Workload Distribution:
+****Workload Distribution****:
 
 Since this is a solo project, all roles will be handled by me:
 
@@ -85,7 +85,7 @@ Since this is a solo project, all roles will be handled by me:
       
       •	Project Management: Weekly progress tracked in Notion + GitHub commits
   
-Future Roadmap: Sprints/Phases
+****Future Roadmap: Sprints/Phases****
 
       •	Week 1: Setup (repo, DB schema, README, environment)
       
@@ -101,20 +101,20 @@ Future Roadmap: Sprints/Phases
       
       •	Week 8: Deployment (AWS/Vercel) + final polish + demo prep
   
-How to Run the Project
-Cost Breakdown
+****How to Run the Project****
+****Cost Breakdown****
     •	OpenAI GPT-4o API: $0.01 per advanced request ($5–10/month for demo use).
     •	Plaid Sandbox: Free for testing.
     •	AWS/GCP Cloud (Student Credits): $0 (using free tier or credits).
     •	Frontend Hosting (Vercel/Netlify): Free tier.
     •	Domain (Optional): $10–15/year.
     •	Total Estimated Cost for MVP: ~$15–25/month (mostly AI usage).
-Business Use Case
+****Business Use Case****
     •	Students struggle with irregular income, complex loan terms, and overspending.
     •	Current apps (Mint, YNAB, Rocket Money) assume financial literacy and stable income.
-    Differentiator:
+    ****Differentiator:****
     •	Education-first: AI explains financial terms.
     •	Student-specific: Loans, scholarships, student discounts.
     •	Proactive: The chatbot provides reminders, insights, and advice instead of passive dashboards.
-Authors & Acknowledgements
+****Authors & Acknowledgements****
 
