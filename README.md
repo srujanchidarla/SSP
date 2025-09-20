@@ -102,11 +102,3 @@ Since this is a **solo project**, all roles will be handled by me:
 
 ## **Authors & Acknowledgements**
 
-### **Author**  
-- [Your Name] – Fullstack Development, AI Integration, Cloud Deployment  
-
-### **Acknowledgements**  
-- Professor [Name] – Capstone Project Guide  
-- OpenAI (GPT-4o) for AI integration  
-- Plaid (Sandbox) for bank data simulation  
-- FreeCodeCamp, Traversy Media, and documentation resources for learning  
