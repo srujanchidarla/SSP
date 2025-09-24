@@ -92,10 +92,7 @@ This project is currently in the initial development phase. The core features ar
 
 ## 🏁 Getting Started
 
-
-## Authors & Acknowledgements
 ---
-
 ## ✍️ Authors & Acknowledgements
-* **Author:** `[Your Name Here]` - Feel free to add your GitHub profile link.
-* **Acknowledgements:** I'd like to thank my professors, teaching assistants, and the open-source community for their invaluable support and tools.
+* **Author:** 
+* **Acknowledgements:** 
