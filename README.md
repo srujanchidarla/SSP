@@ -1,3 +1,4 @@
+
 # SmartScan Pro
 
 # 🛒 Smart Scan Pro: AI-Powered Self-Checkout Web App
