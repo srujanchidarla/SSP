@@ -1,70 +1,101 @@
 # SmartScan Pro
 
-## **Description**
-**SmartScan Pro** is an AI-powered self-scanning retail app for off-price retailers like Marshalls, TJ Maxx, and HomeGoods.  
-It uses OCR + barcode scanning to handle complex price tags, integrates with payment systems, and provides secure QR-based exit verification — making shopping faster and safer.
+# 🛒 Smart Scan Pro: AI-Powered Self-Checkout Web App
+
+## Description
+Smart Scan Pro is a web-based application designed to eliminate long checkout lines in retail stores. Customers can use their smartphone's web browser to scan product barcodes as they shop, view a real-time running total, and complete their transaction through a streamlined digital process. This project aims to improve the customer experience and increase operational efficiency for retailers.
 
 ---
 
-## **Problem Solved**
-Traditional self-checkouts fail in off-price retail due to inconsistent barcodes, handwritten tags, and theft risk.  
-**SmartScan Pro** solves this with AI-powered scanning, real-time price validation, and security integration.
+## 🔑 Key Features
+- **User Authentication:** Secure sign-up and login for customers.
+- **Real-time Barcode Scanning:** Uses the device's camera via the web browser to scan barcodes instantly.
+- **Dynamic Shopping Cart:** Items are immediately added to a digital cart, and the total price is updated in real-time.
+- **QR Code Checkout:** Generates a unique QR code upon payment completion for receipt verification and security checks.
+- **Responsive Design:** Fully functional on both mobile and desktop web browsers.
 
 ---
 
-## **Key Features**
-- **Scanning:** AI OCR + barcode support, multi-format tag recognition
-- **Shopping Assistant:** Budget tracking, allergen alerts, product discovery feed
-- **Security:** Encrypted QR exit verification, fraud detection, transaction logs
-- **Analytics:** Heatmaps, cart abandonment insights, inventory trends
+## 🛠️ Tech Stack
+
+### Front End
+* **Framework:** React.js
+* **Language:** JavaScript, HTML5, CSS3
+* **Styling:** Tailwind CSS (or Material-UI)
+
+### Back End
+* **Framework:** Flask (or Django)
+* **Language:** Python
+* **Key Libraries:**
+    * `Flask-RESTful` for API development
+    * `Flask-SQLAlchemy` for database interaction
+    * `Flask-JWT-Extended` for authentication
+
+### Database
+* **Development:** SQLite
+* **Production:** PostgreSQL
+
+### APIs
+* **Internal:** A custom REST API built with Flask to handle products, users, and carts.
+* **External:** A JavaScript library for camera access and barcode decoding.
+
+### Deployment and Documentation
+* **Front End Deployment:** Vercel / Netlify
+* **Back End Deployment:** Heroku / AWS Elastic Beanstalk
+* **API Documentation:** Swagger / OpenAPI
 
 ---
 
-## **Tech Stack**
-- **Frontend:** React Native, Redux Toolkit, React Navigation, NativeBase, react-native-camera, Stripe SDK
-- **Backend:** Node.js (Express.js), JWT Auth, Multer, Sharp/OpenCV.js, Redis, Jest
-- **Database:** PostgreSQL (Sequelize ORM), Redis cache
-- **APIs:** Google Vision, Stripe, Twilio, Firebase (FCM), Google Maps
-- **Deployment:** Docker, AWS/GCP, GitHub Actions (CI/CD), Swagger (API Docs), Sentry (error tracking)
+## 📊 Project Status
+**In Development**
+
+This project is currently in the initial development phase. The core features are being planned and implemented.
 
 ---
 
-## **Project Status**
-🚧 **In Development** – 14-week Capstone Project
+## 👥 Workload Distribution
 
-- **Completed:** Repo setup, database schema, JWT auth, basic app navigation, user registration/login
-- **In Progress:** Barcode scanning, product DB integration, digital cart, payment flow
-- **Upcoming:** QR-based security, OCR integration, analytics dashboard, full testing & polish
 
 ---
 
-## **Workload Distribution**
-- **Mobile Development (40%)** – UI/UX, camera scanning, payment integration
-- **Backend (35%)** – APIs, authentication, database, integrations
-- **AI/ML (15%)** – OCR, image processing, recommendations
-- **DevOps (10%)** – CI/CD, deployment, monitoring
+## 🚀 Future Roadmap (Sprints)
+*Each sprint is 2 weeks.*
+
+### Sprint 1 (Weeks 1-2): Foundation & Setup
+- [ ] Initialize Git repository.
+- [ ] Set up the front-end (React) and back-end (Flask) project structures.
+- [ ] Design the database schema for Users, Products, and Carts.
+- [ ] Create basic UI mockups and wireframes.
+
+### Sprint 2 (Weeks 3-4): User Authentication
+- [ ] Implement user registration and login functionality on the back end.
+- [ ] Create sign-up and login pages on the front end.
+- [ ] Implement JWT token-based authentication to secure endpoints.
+
+### Sprint 3 (Weeks 5-6): Core Scanning & Cart Feature
+- [ ] Integrate a barcode scanning library into the React front end.
+- [ ] Create back-end endpoints to fetch product details based on a scanned barcode.
+- [ ] Implement the real-time shopping cart on the front end.
+
+### Sprint 4 (Weeks 7-8): Checkout & Finalization
+- [ ] Develop the checkout process logic.
+- [ ] Generate a QR code receipt after successful "payment".
+- [ ] Create a "verification" screen for the cashier.
+- [ ] Refine the UI and fix bugs.
+
+### Future Sprints (Post-MVP)
+- **AI Object Recognition:** Implement a feature to identify items without barcodes (like produce) using a machine learning model (e.g., TensorFlow.js).
+- **Promotions Engine:** Add functionality to apply discounts and coupons.
+- **Analytics Dashboard:** Create a simple dashboard for retailers to view sales data.
 
 ---
 
-## **Future Roadmap (Sprints – 2 weeks each)**
-- **Core Scanning:** Barcode scanning, cart system, basic payments
-- **Security & QR:** Encrypted QR exit, fraud detection, transaction history
-- **AI OCR Integration:** Price tag OCR, allergen & ingredient analysis
-- **Smart Features:** Budget tracker, product discovery, route optimization
-- **Analytics Dashboard:** Store heatmaps, inventory insights, KPI tracking
-- **Testing & Polish:** Load testing, security audit, accessibility, docs
+## 🏁 Getting Started
 
+
+## Authors & Acknowledgements
 ---
 
-## **Getting Started (Setup by Midterm)**
-
-```bash
-# Clone repo
-git clone https://github.com/[username]/smartscan-pro.git && cd smartscan-pro
-
-# Backend setup
-cd backend && npm install && cp .env.example .env && npm run migrate && npm run dev
-
-# Mobile app setup
-cd ../mobile-app/SmartScanApp && npm install && npx react-native start
-npx react-native run-android   # or run-ios (Mac only)
+## ✍️ Authors & Acknowledgements
+* **Author:** `[Your Name Here]` - Feel free to add your GitHub profile link.
+* **Acknowledgements:** I'd like to thank my professors, teaching assistants, and the open-source community for their invaluable support and tools.
