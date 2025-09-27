@@ -96,4 +96,8 @@ This project is currently in the initial development phase. The core features ar
 ---
 ## ✍️ Authors & Acknowledgements
 * **Author:** 
-* **Acknowledgements:** 
+* **Acknowledgements:**
+* 
+## Live Project Activity Tracker
+You can view the detailed tasks, assignments, and real-time progress for this project on our public Notion board:
+https://www.notion.so/SmartScan-Pro-Project-Task-Activity-Tracker-27b7ef3502238087982feee3ae97d01b?source=copy_link
