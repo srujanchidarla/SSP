@@ -62,23 +62,23 @@ This project is currently in the initial development phase. The core features ar
 ## 🚀 Future Roadmap (Sprints)
 *Each sprint is 2 weeks.*
 
-### Sprint 1 (Weeks 1-2): Foundation & Setup
+### Sprint 1: Foundation & Setup
 - [ ] Initialize Git repository.
 - [ ] Set up the front-end (React) and back-end (Flask) project structures.
 - [ ] Design the database schema for Users, Products, and Carts.
 - [ ] Create basic UI mockups and wireframes.
 
-### Sprint 2 (Weeks 3-4): User Authentication
+### Sprint 2: User Authentication
 - [ ] Implement user registration and login functionality on the back end.
 - [ ] Create sign-up and login pages on the front end.
 - [ ] Implement JWT token-based authentication to secure endpoints.
 
-### Sprint 3 (Weeks 5-6): Core Scanning & Cart Feature
+### Sprint 3: Core Scanning & Cart Feature
 - [ ] Integrate a barcode scanning library into the React front end.
 - [ ] Create back-end endpoints to fetch product details based on a scanned barcode.
 - [ ] Implement the real-time shopping cart on the front end.
 
-### Sprint 4 (Weeks 7-8): Checkout & Finalization
+### Sprint 4: Checkout & Finalization
 - [ ] Develop the checkout process logic.
 - [ ] Generate a QR code receipt after successful "payment".
 - [ ] Create a "verification" screen for the cashier.
