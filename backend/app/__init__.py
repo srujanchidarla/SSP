@@ -1,50 +1,36 @@
 from flask import Flask
-from config import config
+from config import Config
 from .extensions import db, migrate, jwt, cors
 
-def create_app(config_name='default'):
-    """
-    Application factory function.
-    Configures and returns the Flask application instance.
-    """
+def create_app(config_class=Config):
     app = Flask(__name__)
-    app.config.from_object(config[config_name])
+    app.config.from_object(config_class)
 
-    # --- Initialize Extensions ---
-    # These are initialized with the app instance
+    print(f"--- Loaded JWT Secret Key: '{app.config.get('JWT_SECRET_KEY')}' ---")
+
+    # Initialize extensions
     db.init_app(app)
     migrate.init_app(app, db)
     jwt.init_app(app)
-    cors.init_app(app, resources={r"/api/": {"origins": ""}})
+    cors.init_app(app, resources={r"/api/*": {"origins": "*"}})
 
-    # --- Import Models ---
-    # This ensures models are registered with SQLAlchemy before a 'flask db' command is run
+    # Import models to ensure they are registered
     from . import models
 
-    # --- Register Blueprints ---
-    # This organizes the application's routes
+    # Register blueprints
     from .auth.routes import auth_bp
     app.register_blueprint(auth_bp, url_prefix='/api/auth')
+
+    from .users.routes import users_bp
+    app.register_blueprint(users_bp, url_prefix='/api/profile')
 
     from .products.routes import product_bp
     app.register_blueprint(product_bp, url_prefix='/api/products')
 
-    from .cart import bp as cart_bp
+    from .cart.routes import cart_bp
     app.register_blueprint(cart_bp, url_prefix='/api/cart')
 
-    from .transactions import bp as transactions_bp
+    from .transactions.routes import transactions_bp
     app.register_blueprint(transactions_bp, url_prefix='/api/transactions')
 
-    # Add other blueprints for cart and transactions as you build them
-    # from .cart.routes import cart_bp
-    # app.register_blueprint(cart_bp, url_prefix='/api/cart')
-    # from .transactions.routes import transactions_bp
-    # app.register_blueprint(transactions_bp, url_prefix='/api/transactions')
-
-    # REMOVED: The problematic db.create_all() and create_sample_data() calls are gone.
-    # The database should be managed via 'flask db' commands in the terminal.
-
     return app
-
-# REMOVED: The create_sample_data function is also gone from this file.
-# We will move it to a separate script.
