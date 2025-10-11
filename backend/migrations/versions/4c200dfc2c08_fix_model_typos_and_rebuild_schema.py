@@ -1,8 +1,8 @@
-"""Create database tables
+"""Fix model typos and rebuild schema
 
-Revision ID: a30c91a6f028
+Revision ID: 4c200dfc2c08
 Revises: 
-Create Date: 2025-10-04 13:07:38.602598
+Create Date: 2025-10-08 10:48:09.382867
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'a30c91a6f028'
+revision = '4c200dfc2c08'
 down_revision = None
 branch_labels = None
 depends_on = None
