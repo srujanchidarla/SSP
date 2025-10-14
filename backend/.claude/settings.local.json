@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/ippal/Desktop/smartscan-pro/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
