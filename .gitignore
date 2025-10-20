@@ -6,3 +6,6 @@ Product images/
 
 # Ignore specific files
 AI_FEATURES.md
+
+# environment files
+.env
