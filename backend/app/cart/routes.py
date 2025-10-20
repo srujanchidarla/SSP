@@ -22,22 +22,28 @@ def get_cart():
     """Retrieves the full contents of the current user's cart."""
     user_id = get_jwt_identity()
     cart = _get_or_create_cart(user_id)
-    
+
     cart_items_data = []
     total_price = 0
     for item in cart.items:
         item_data = {
-            "item_id": item.id,
+            "id": item.id,
+            "cart_id": cart.id,
             "product_id": item.product.id,
-            "name": item.product.name,
-            "price": item.product.price,
             "quantity": item.quantity,
-            "subtotal": round(item.product.price * item.quantity, 2)
+            "product": {
+                "id": item.product.id,
+                "barcode": item.product.barcode,
+                "name": item.product.name,
+                "price": item.product.price
+            }
         }
         cart_items_data.append(item_data)
-        total_price += item_data["subtotal"]
-    
+        total_price += item.product.price * item.quantity
+
     return jsonify({
+        "id": cart.id,
+        "user_id": cart.user_id,
         "items": cart_items_data,
         "total": round(total_price, 2)
     })
@@ -59,7 +65,7 @@ def add_item_to_cart():
         return jsonify({"msg": "Product not found"})
 
     cart = _get_or_create_cart(user_id)
-    
+
     # Check if this product is already in the cart
     cart_item = CartItem.query.filter_by(cart_id=cart.id, product_id=product.id).first()
 
@@ -68,7 +74,7 @@ def add_item_to_cart():
     else:
         cart_item = CartItem(cart_id=cart.id, product_id=product.id, quantity=quantity)
         db.session.add(cart_item)
-    
+
     db.session.commit()
     return jsonify({"msg": f"'{product.name}' added to cart."})
 
@@ -81,16 +87,45 @@ def update_cart_item(item_id):
     quantity = data.get('quantity')
 
     if quantity is None or int(quantity) < 1:
-        return jsonify({"msg": "A valid quantity is required"})
-    
+        return jsonify({"msg": "A valid quantity is required"}), 400
+
     cart_item = CartItem.query.get(item_id)
-    
-    if not cart_item or cart_item.cart.user_id != user_id:
-        return jsonify({"msg": "Cart item not found"})
-        
+
+    if not cart_item or cart_item.cart.user_id != int(user_id):
+        return jsonify({"msg": "Cart item not found"}), 404
+
     cart_item.quantity = int(quantity)
     db.session.commit()
-    return jsonify({"msg": "Cart updated."})
+
+    # Return updated cart
+    cart = cart_item.cart
+    cart_items_data = []
+    total_price = 0
+    for item in cart.items:
+        item_data = {
+            "id": item.id,
+            "cart_id": cart.id,
+            "product_id": item.product.id,
+            "quantity": item.quantity,
+            "product": {
+                "id": item.product.id,
+                "barcode": item.product.barcode,
+                "name": item.product.name,
+                "price": item.product.price
+            }
+        }
+        cart_items_data.append(item_data)
+        total_price += item.product.price * item.quantity
+
+    return jsonify({
+        "message": "Cart updated",
+        "cart": {
+            "id": cart.id,
+            "user_id": cart.user_id,
+            "items": cart_items_data,
+            "total": round(total_price, 2)
+        }
+    })
 
 @cart_bp.route('/items/<int:item_id>', methods=['DELETE'])
 @jwt_required()
@@ -98,10 +133,39 @@ def remove_item_from_cart(item_id):
     """Removes a specific item from the cart."""
     user_id = get_jwt_identity()
     cart_item = CartItem.query.get(item_id)
-    
-    if not cart_item or cart_item.cart.user_id != user_id:
-        return jsonify({"msg": "Cart item not found"})
-        
+
+    if not cart_item or cart_item.cart.user_id != int(user_id):
+        return jsonify({"msg": "Cart item not found"}), 404
+
+    cart = cart_item.cart
     db.session.delete(cart_item)
     db.session.commit()
-    return jsonify({"msg": "Item removed from cart."})
+
+    # Return updated cart
+    cart_items_data = []
+    total_price = 0
+    for item in cart.items:
+        item_data = {
+            "id": item.id,
+            "cart_id": cart.id,
+            "product_id": item.product.id,
+            "quantity": item.quantity,
+            "product": {
+                "id": item.product.id,
+                "barcode": item.product.barcode,
+                "name": item.product.name,
+                "price": item.product.price
+            }
+        }
+        cart_items_data.append(item_data)
+        total_price += item.product.price * item.quantity
+
+    return jsonify({
+        "message": "Item removed from cart",
+        "cart": {
+            "id": cart.id,
+            "user_id": cart.user_id,
+            "items": cart_items_data,
+            "total": round(total_price, 2)
+        }
+    })

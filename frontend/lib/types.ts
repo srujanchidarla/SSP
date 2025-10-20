@@ -30,10 +30,10 @@ export interface Cart {
 
 export interface TransactionItem {
   id: number;
-  transaction_id: number;
   product_id: number;
   quantity: number;
   price_at_purchase: number;
+  product: Product;
 }
 
 export interface Transaction {

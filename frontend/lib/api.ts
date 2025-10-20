@@ -58,7 +58,7 @@ async function apiFetch<T>(
     const data = await response.json();
 
     if (!response.ok) {
-      throw new Error(data.error || data.message || 'An error occurred');
+      throw new Error(data.msg || data.error || data.message || 'An error occurred');
     }
 
     return data;
@@ -197,10 +197,42 @@ export const transactionsAPI = {
   },
 };
 
+// AI API
+export const aiAPI = {
+  async recognizeProduct(imageData: string): Promise<any> {
+    return apiFetch<any>('/ai/recognize-product', {
+      method: 'POST',
+      body: JSON.stringify({ image: imageData }),
+    }, true);
+  },
+
+  async chat(message: string, history: any[] = []): Promise<{ response: string; timestamp: string }> {
+    return apiFetch<{ response: string; timestamp: string }>('/ai/chat', {
+      method: 'POST',
+      body: JSON.stringify({ message, history }),
+    }, true);
+  },
+
+  async getRecommendations(cart?: string): Promise<{ recommendations: any[] }> {
+    const query = cart ? `?cart=${encodeURIComponent(cart)}` : '';
+    return apiFetch<{ recommendations: any[] }>(`/ai/recommendations${query}`, {
+      method: 'GET',
+    }, true);
+  },
+
+  async checkFraud(scanData: any, behavior: any): Promise<any> {
+    return apiFetch<any>('/ai/fraud-check', {
+      method: 'POST',
+      body: JSON.stringify({ scan_data: scanData, behavior }),
+    }, true);
+  },
+};
+
 // Export all APIs as a single object
 export const api = {
   auth: authAPI,
   products: productsAPI,
   cart: cartAPI,
   transactions: transactionsAPI,
+  ai: aiAPI,
 };

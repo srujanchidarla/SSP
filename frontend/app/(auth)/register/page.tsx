@@ -12,19 +12,39 @@ export default function RegisterPage() {
   const [loading, setLoading] = useState(false);
   const { register } = useAuth();
 
+  const validatePassword = (pwd: string): string | null => {
+    if (pwd.length < 8) {
+      return 'Password must be at least 8 characters long';
+    }
+    if (!/[A-Z]/.test(pwd)) {
+      return 'Password must contain at least one uppercase letter';
+    }
+    if (!/[a-z]/.test(pwd)) {
+      return 'Password must contain at least one lowercase letter';
+    }
+    if (!/[0-9]/.test(pwd)) {
+      return 'Password must contain at least one number';
+    }
+    if (!/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(pwd)) {
+      return 'Password must contain at least one special character';
+    }
+    return null;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
 
-    // Validate passwords match
-    if (password !== confirmPassword) {
-      setError('Passwords do not match');
+    // Validate password strength
+    const passwordError = validatePassword(password);
+    if (passwordError) {
+      setError(passwordError);
       return;
     }
 
-    // Validate password length
-    if (password.length < 6) {
-      setError('Password must be at least 6 characters');
+    // Validate passwords match
+    if (password !== confirmPassword) {
+      setError('Passwords do not match');
       return;
     }
 
@@ -84,7 +104,7 @@ export default function RegisterPage() {
                 autoComplete="new-password"
                 required
                 className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
-                placeholder="Password (min 6 characters)"
+                placeholder="Password (min 8 chars, 1 uppercase, 1 number, 1 special)"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
@@ -105,6 +125,17 @@ export default function RegisterPage() {
                 onChange={(e) => setConfirmPassword(e.target.value)}
               />
             </div>
+          </div>
+
+          <div className="text-xs text-gray-600 bg-gray-50 p-3 rounded">
+            <p className="font-semibold mb-1">Password Requirements:</p>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Minimum 8 characters</li>
+              <li>At least one uppercase letter (A-Z)</li>
+              <li>At least one lowercase letter (a-z)</li>
+              <li>At least one number (0-9)</li>
+              <li>At least one special character (!@#$%^&* etc.)</li>
+            </ul>
           </div>
 
           <div>

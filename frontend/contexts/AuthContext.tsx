@@ -4,6 +4,7 @@ import React, { createContext, useContext, useState, useEffect, ReactNode } from
 import { User } from '@/lib/types';
 import { authAPI } from '@/lib/api';
 import { useRouter } from 'next/navigation';
+import toast from 'react-hot-toast';
 
 interface AuthContextType {
   user: User | null;
@@ -61,6 +62,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     try {
       const response = await authAPI.register(email, password);
       setUser(response.user);
+      toast.success('Registration successful! Welcome to SmartScan Pro!');
       router.push('/products');
     } catch (error) {
       throw error;
@@ -70,6 +72,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const logout = async () => {
     try {
       await authAPI.logout();
+      toast.success('Logged out successfully!');
     } catch (error) {
       console.error('Logout error:', error);
     } finally {

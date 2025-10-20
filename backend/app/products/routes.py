@@ -12,7 +12,9 @@ def get_products():
 
 @product_bp.route('/<string:barcode>', methods=['GET'])
 def get_product_by_barcode(barcode):
-    product = Product.query.filter_by(barcode=barcode).first_or_404()
+    product = Product.query.filter_by(barcode=barcode).first()
+    if not product:
+        return jsonify({"error": "Product not found"}), 404
     return jsonify({"id": product.id, "barcode": product.barcode, "name": product.name, "price": product.price})
 
 @product_bp.route('', methods=['POST'])

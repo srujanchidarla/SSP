@@ -22,6 +22,28 @@ def create_app(config_class=Config):
     # Import models to ensure they are registered with SQLAlchemy
     from . import models
 
+    # Health check endpoint
+    @app.route('/')
+    def health_check():
+        return jsonify({
+            "status": "ok",
+            "message": "SmartScan Pro API is running",
+            "version": "1.0.0"
+        }), 200
+
+    @app.route('/api')
+    def api_info():
+        return jsonify({
+            "message": "SmartScan Pro API",
+            "endpoints": {
+                "auth": "/api/auth (login, register, logout, profile)",
+                "products": "/api/products (CRUD operations)",
+                "cart": "/api/cart (cart management)",
+                "transactions": "/api/transactions (checkout, history)",
+                "ai": "/api/ai (product recognition, chatbot, recommendations, fraud detection)"
+            }
+        }), 200
+
     # Register all blueprints
     from .auth.routes import auth_bp
     app.register_blueprint(auth_bp, url_prefix='/api/auth')
@@ -31,4 +53,6 @@ def create_app(config_class=Config):
     app.register_blueprint(cart_bp, url_prefix='/api/cart')
     from .transactions.routes import transactions_bp
     app.register_blueprint(transactions_bp, url_prefix='/api/transactions')
+    from .ai.routes import ai_bp
+    app.register_blueprint(ai_bp, url_prefix='/api/ai')
     return app
