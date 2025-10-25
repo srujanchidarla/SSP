@@ -5,6 +5,7 @@ Next.js + Tailwind CSS frontend for SmartScan Pro self-checkout application.
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js 18+ installed
 - Backend Flask server running on `http://127.0.0.1:5000`
 
@@ -84,6 +85,7 @@ NEXT_PUBLIC_API_URL=http://127.0.0.1:5000/api
 ## Authentication
 
 The app uses JWT tokens stored in localStorage. The AuthContext provides:
+
 - `user` - Current user data
 - `login(email, password)` - Login function
 - `register(email, password)` - Registration function
@@ -96,7 +98,7 @@ The app uses JWT tokens stored in localStorage. The AuthContext provides:
 All API calls are centralized in `lib/api.ts`:
 
 ```typescript
-import { api } from '@/lib/api';
+import { api } from "@/lib/api";
 
 // Auth
 await api.auth.login(email, password);
@@ -107,9 +109,9 @@ await api.auth.getProfile();
 // Products
 await api.products.getAll();
 await api.products.getByBarcode(barcode);
-await api.products.create(product);  // Admin only
-await api.products.update(barcode, product);  // Admin only
-await api.products.delete(barcode);  // Admin only
+await api.products.create(product); // Admin only
+await api.products.update(barcode, product); // Admin only
+await api.products.delete(barcode); // Admin only
 
 // Cart
 await api.cart.get();
@@ -134,6 +136,7 @@ await api.transactions.getHistory();
 ## Testing
 
 Currently, you can:
+
 1. Start both backend and frontend servers
 2. Navigate to http://localhost:3000
 3. Register a new account or login with existing credentials:
